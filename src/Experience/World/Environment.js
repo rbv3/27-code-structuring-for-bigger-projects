@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import Experience from "../Experience";
+import Experience from "../Experience.js";
 
 export default class Environment {
     constructor() {
@@ -27,7 +27,7 @@ export default class Environment {
         this.environmentMap.texture = this.resources.items.environmentMapTexture
 
         this.scene.environment = this.environmentMap.texture
-        
+
         this.setEnvironmentMap.updateMaterial = () => {
             this.scene.traverse((child) => {
                 if(child instanceof THREE.Mesh &&
