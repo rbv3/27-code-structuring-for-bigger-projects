@@ -9,17 +9,14 @@ export default class Renderer {
         this.scene = this.experience.scene
         this.camera = this.experience.camera
 
-        console.log('all good');
         this.setInstance()
     }
 
     setInstance() {
-        console.log(this.canvas)
         this.instance = new THREE.WebGLRenderer({
             canvas: this.canvas,
             antialias: true
         })
-        console.log(this.instance)
         this.instance.toneMapping = THREE.CineonToneMapping
         this.instance.toneMappingExposure = 1.75
         this.instance.shadowMap.enabled = true
