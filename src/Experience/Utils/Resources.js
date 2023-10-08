@@ -27,7 +27,6 @@ export default class Resources extends EventEmitter {
     }
 
     startLoading() {
-        console.log(this.sources);
         for(const source of this.sources) {
             switch(source.type) {
                 case 'gltfModel':
@@ -61,7 +60,6 @@ export default class Resources extends EventEmitter {
         this.items[source.name] = file
         this.loaded++
         if(this.loaded === this.toLoad) {
-            console.log('finished!')
             this.trigger('ready')
         }
     }
